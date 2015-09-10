@@ -38,11 +38,7 @@ module.exports = function (modes) {
 
     var checkStatus = function () {
       var isIn = !!find(files, function (fileLine) {
-        var line = fileLine.path;
-        if (line.substring(line.length, line.length - 1)) {
-          return file.path.indexOf(line.substring(0, line.length - 1)) !== -1;
-        }
-        return file.path.indexOf(line) !== -1;
+        return file.path === fileLine.path;
       });
 
       if (isIn) {
